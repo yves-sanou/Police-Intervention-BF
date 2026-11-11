@@ -1,23 +1,2 @@
 INSTALLATION - DIFFUSION SOS ET AFFECTATION DES EQUIPES
 
-1. Sauvegardez votre base de données.
-2. Décompressez cette archive et remplacez le dossier du projet.
-3. Sur une base V5 déjà existante, exécutez UNE SEULE FOIS :
-   database/migration_sos_broadcast.sql
-4. Pour une nouvelle installation, utilisez database/schema.sql ou schema_ionos.sql.
-5. Connectez-vous avec un compte agent membre d'une équipe et testez le déclenchement.
-6. Vérifiez que les comptes des membres des équipes reçoivent une notification.
-7. Depuis un compte agent membre d'une équipe disponible, ouvrez Alertes SOS et cliquez
-   sur "Accepter avec [nom de l'équipe]".
-8. Depuis admin/superviseur, ouvrez Alertes SOS et choisissez une équipe disponible
-   dans le formulaire "Affecter".
-
-Règles :
-- L'équipe qui a déclenché le SOS est l'équipe émettrice, elle ne peut pas se désigner
-  elle-même comme équipe de renfort.
-- Toutes les équipes sont notifiées.
-- Une seule équipe disponible peut accepter l'intervention.
-- Le premier clic validé en base gagne ; les clics suivants sont refusés.
-- Admin et superviseur peuvent affecter manuellement une équipe disponible.
-- Coordonnées, précision GPS, message, référence et équipe émettrice sont conservés
-  dans l'intervention automatique.
