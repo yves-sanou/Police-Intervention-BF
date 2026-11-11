@@ -1,16 +1,3 @@
 CORRECTION DU BADGE DE NOTIFICATIONS
 
-Cause :
-L'ancien endpoint comptait uniquement notifications.is_read = 0.
-Une notification liée à une alerte SOS restait donc comptée même après la résolution de l'alerte.
 
-Correction :
-- api/notifications.php joint notifications.sos_id à sos_alerts.id.
-- Les notifications SOS ne sont plus comptées si le statut lié est "resolue".
-- Les notifications classiques restent comptées jusqu'à leur lecture.
-- assets/js/app.js actualise le badge toutes les 5 secondes.
-- Le compteur conserve sa dernière valeur en cas d'erreur réseau.
-
-Important :
-Le badge de notifications (notificationBadge) et le badge des SOS actifs (sosBadge)
-sont deux compteurs distincts.
