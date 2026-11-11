@@ -1,0 +1,15 @@
+# Configuration locale
+/config/config.php
+.env
+.env.*
+
+# Logs et fichiers temporaires
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Sauvegardes
+*.sql.gz
+*.zip
+/backups/
