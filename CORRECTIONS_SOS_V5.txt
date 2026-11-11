@@ -1,0 +1,10 @@
+CORRECTIONS V5 - ACTIONS ALERTES SOS
+
+- Réécriture de sos/index.php avec affichage explicite des actions selon le rôle et le statut.
+- Bouton Prendre en charge pour les alertes au statut active.
+- Bouton Clôturer pour les alertes active ou prise_en_charge.
+- Message explicite pour les profils en consultation seule et les alertes déjà clôturées.
+- Utilisation de url('sos/resolve.php') pour respecter le chemin dynamique du projet.
+- Traitement POST sécurisé dans resolve.php : connexion, rôle admin/superviseur, CSRF, validation, transaction SQL.
+- Remise à disponibilité de l'équipe uniquement lorsqu'elle n'a plus aucune alerte SOS ouverte.
+- Compteur SOS actualisé via l'API avec le chemin de base dynamique.

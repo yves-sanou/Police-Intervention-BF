@@ -1,0 +1,17 @@
+{
+  "name": "Police Intervention BF V5",
+  "short_name": "Police BF V5",
+  "description": "Plateforme de coordination, intervention et suivi GPS des équipes.",
+  "lang": "fr-FR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#07130f",
+  "theme_color": "#123c2d",
+  "categories": ["security", "government", "productivity"],
+  "icons": [
+    {"src":"assets/icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"assets/icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}

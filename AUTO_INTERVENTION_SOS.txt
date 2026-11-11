@@ -1,0 +1,16 @@
+AUTOMATISATION SOS -> INTERVENTION
+
+Lorsqu'un membre d'équipe transmet un SOS :
+1. Le SOS est créé.
+2. Une intervention est créée dans la même transaction SQL.
+3. L'intervention porte une référence SOS-..., le type "Alerte SOS",
+   la priorité "tres_urgent", les coordonnées GPS, et l'équipe déjà affectée.
+4. Le statut initial de l'intervention est "affectee".
+5. Les administrateurs/superviseurs sont notifiés du SOS.
+6. Les membres de l'équipe sont notifiés de l'intervention.
+7. La liste interventions/index.php affiche un badge "SOS automatique".
+
+Aucune modification du schéma SQL n'est nécessaire : les colonnes existantes
+de sos_alerts, interventions et notifications sont utilisées.
+Les deux créations sont transactionnelles : en cas d'échec, le SOS et
+l'intervention sont tous deux annulés.

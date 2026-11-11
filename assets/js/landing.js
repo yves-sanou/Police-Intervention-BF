@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){const loader=document.getElementById("loader");if(!loader)return;window.setTimeout(function(){loader.classList.add("hidden");window.setTimeout(function(){loader.remove()},800)},1800);});

@@ -1,0 +1,640 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    background: #f3f6f9;
+    color: #17202a;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar {
+    height: 64px;
+
+    background: #123c2d;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 22px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+.brand {
+    font-weight: 800;
+}
+
+.brand span {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-left: 8px;
+}
+
+.top-actions {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.top-actions a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.layout {
+    display: flex;
+    min-height: calc(100vh - 64px);
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    width: 235px;
+
+    background: #10251d;
+
+    padding: 18px 12px;
+
+    flex-shrink: 0;
+}
+
+.sidebar a {
+    display: block;
+
+    color: #d8e7df;
+
+    text-decoration: none;
+
+    padding: 13px 14px;
+
+    border-radius: 9px;
+
+    margin-bottom: 6px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sidebar a:hover {
+    background: #1d4b3a;
+    color: #fff;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content {
+    flex: 1;
+
+    padding: 24px;
+
+    max-width: 1600px;
+
+    margin: auto;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.card {
+    background: #fff;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    box-shadow: 0 3px 15px rgba(23, 32, 42, 0.07);
+}
+
+
+/* =========================================================
+   STATISTIQUES
+========================================================= */
+
+.stat {
+    font-size: 30px;
+
+    font-weight: 800;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.toolbar {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   BOUTONS
+========================================================= */
+
+.btn {
+    display: inline-block;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    padding: 10px 15px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    background: #176b4d;
+
+    color: #fff;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn:hover {
+    background: #12563e;
+
+    transform: translateY(-1px);
+}
+
+.btn.danger {
+    background: #b42318;
+}
+
+.btn.danger:hover {
+    background: #8e1c13;
+}
+
+.btn.warning {
+    background: #a15c00;
+}
+
+.btn.warning:hover {
+    background: #824b00;
+}
+
+.btn.secondary {
+    background: #52606d;
+}
+
+.btn.secondary:hover {
+    background: #3e4b56;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-wrap {
+    overflow: auto;
+
+    background: #fff;
+
+    border-radius: 14px;
+}
+
+.table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+
+    border-bottom: 1px solid #e7ecef;
+
+    text-align: left;
+}
+
+.table th {
+    font-weight: 800;
+
+    background: #f8fafb;
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.badge {
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    background: #e7eef0;
+}
+
+.badge.red {
+    background: #fee4e2;
+
+    color: #b42318;
+}
+
+.badge.orange {
+    background: #fff0d9;
+
+    color: #8a4b00;
+}
+
+.badge.green {
+    background: #def7ec;
+
+    color: #087443;
+}
+
+
+/* =========================================================
+   FORMULAIRES
+========================================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+.field input,
+.field select,
+.field textarea {
+    padding: 11px;
+
+    border: 1px solid #ccd5db;
+
+    border-radius: 8px;
+
+    font: inherit;
+
+    width: 100%;
+
+    background: #fff;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    outline: none;
+
+    border-color: #176b4d;
+
+    box-shadow: 0 0 0 3px rgba(23, 107, 77, 0.12);
+}
+
+
+/* =========================================================
+   CARTE
+========================================================= */
+
+.map {
+    height: 520px;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BOUTON SOS CLASSIQUE
+========================================================= */
+
+.sos {
+    background: #b42318;
+
+    color: #fff;
+
+    border: 0;
+
+    padding: 18px 24px;
+
+    border-radius: 14px;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 24px rgba(180, 35, 24, 0.25);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.sos:hover {
+    background: #941c13;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(180, 35, 24, 0.35);
+}
+
+.sos:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   ALERTE
+========================================================= */
+
+.alert {
+    padding: 14px;
+
+    border-radius: 10px;
+
+    background: #fff0f0;
+
+    border-left: 5px solid #b42318;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast {
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    background: #123c2d;
+
+    color: white;
+
+    padding: 14px 18px;
+
+    border-radius: 10px;
+
+    display: none;
+
+    z-index: 2000;
+}
+
+
+/* =========================================================
+   🆘 BOUTON SOS MENU
+========================================================= */
+
+.sos-menu-btn {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    margin: 12px 0;
+
+    padding: 14px 10px;
+
+    background: #c62828;
+
+    color: #fff !important;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    border-radius: 10px;
+
+    border: 2px solid #ff5252;
+
+    box-shadow:
+        0 5px 15px rgba(198, 40, 40, 0.35);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   SOS MENU - HOVER
+========================================================= */
+
+.sos-menu-btn:hover {
+    background: #a71919;
+
+    color: #fff !important;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(198, 40, 40, 0.5);
+}
+
+
+/* =========================================================
+   SOS MENU - ACTIVE
+========================================================= */
+
+.sos-menu-btn:active {
+    transform: scale(0.97);
+
+    background: #8e1111;
+}
+
+
+/* =========================================================
+   SOS MENU - ANIMATION
+========================================================= */
+
+.sos-menu-btn {
+    animation: sosPulse 2s infinite;
+}
+
+@keyframes sosPulse {
+
+    0% {
+        box-shadow:
+            0 5px 15px rgba(198, 40, 40, 0.35);
+    }
+
+    50% {
+        box-shadow:
+            0 5px 25px rgba(198, 40, 40, 0.75);
+    }
+
+    100% {
+        box-shadow:
+            0 5px 15px rgba(198, 40, 40, 0.35);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLETTE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 70px;
+
+        padding: 18px 8px;
+    }
+
+    .sidebar a {
+        font-size: 0;
+
+        text-align: center;
+
+        padding: 13px 5px;
+    }
+
+    .sos-menu-btn {
+        font-size: 0;
+
+        padding: 14px 5px;
+    }
+
+    .sos-menu-btn::first-letter {
+        font-size: 22px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content {
+        padding: 14px;
+    }
+
+    .topbar {
+        padding: 0 12px;
+    }
+
+    .top-actions {
+        gap: 8px;
+    }
+
+    .top-actions span {
+        display: none;
+    }
+
+    .map {
+        height: 420px;
+    }
+
+    .toolbar {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .sos {
+        width: 100%;
+
+        font-size: 18px;
+    }
+
+}

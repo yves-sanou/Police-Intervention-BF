@@ -1,0 +1,21 @@
+SOS - DIFFUSION À TOUTES LES ÉQUIPES ET AFFECTATION
+
+Nouveau fonctionnement :
+1. Une équipe membre déclenche un SOS avec sa position GPS.
+2. Le système crée une alerte SOS et une intervention "Alerte SOS".
+3. L'intervention est initialement sans équipe affectée (team_id NULL, status nouvelle).
+4. Une notification est créée pour tous les membres de toutes les équipes, ainsi que pour les admins et superviseurs.
+5. Les membres d'une équipe disponible, autre que l'équipe émettrice, voient un bouton pour accepter.
+6. Le premier membre qui valide au nom de son équipe disponible affecte cette équipe à l'intervention.
+7. La transaction SQL verrouille l'alerte et l'intervention : une seule équipe peut gagner.
+8. Admin/superviseur peut affecter manuellement une équipe disponible depuis Alertes SOS.
+9. Les coordonnées GPS, la précision, le message, l'équipe émettrice et la référence de l'intervention sont conservés.
+
+MIGRATION OBLIGATOIRE sur une base V5 déjà installée :
+Exécuter database/migration_sos_broadcast.sql une seule fois.
+Le fichier database/schema.sql contient aussi la nouvelle colonne pour les installations neuves.
+
+Important :
+- Le statut de l'équipe émettrice reste "sos" jusqu'à clôture.
+- L'équipe de renfort passe "en_intervention" après acceptation.
+- Une équipe déjà occupée ou indisponible ne peut pas accepter le SOS.
